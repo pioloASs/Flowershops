@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Order</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f5f5, #ffffff);
+    color: #333;
+
+}
+body{
+background-color: #fff0f5 !important;
+}
+
+h1 {
+    text-align: center;
+    background-color: #d28a8c;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    margin: 20px auto;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    background-color: #2c3e50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background-color: #D28A8C;
+    transition: all 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: saddlebrown;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.metrics {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.metric {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    min-width: 180px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.metric:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.metric p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+.metric strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.5em;
+    color: #2c3e50;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+th {
+    background-color: #ecf0f1;
+    color: #34495e;
+    font-weight: 600;
+    border-bottom: 2px solid #dcdcdc;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+a.button {
+    background-color: #e67e22;
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+a.button:hover {
+    background-color: #ca5c00;
+    transform: scale(1.05);
+}
+
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
+    border-color: #e67e22;
+    outline: none;
+}
+
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 20px auto;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #34495e;
+    color: white;
+    margin-top: 40px;
+}
+        color: saddlebrown;
+  margin: 10px;
+ text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+</style>
+</head>
+<body>
+    <h1>Edit Order</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ order[1] }}" required><br>
+
+        <label for="flower">Flower Type:</label>
+        <input type="text" id="flower" name="flower" value="{{ order[2] }}" required><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="{{ order[3] }}" required><br>
+
+        <button type="submit" class="button">Update Order</button>
+    </form>
+
+</body>
+</html>
+
+</body>
+</html>

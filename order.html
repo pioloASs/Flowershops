@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body {
+      background-color: #fff0f5 !important;
+      font-family: 'Single Day', cursive;
+      background-size: cover;
+      margin: 0;
+    }
+
+    p {
+      text-align: center;
+      font-size: 250%;
+      color: #e9cbff;
+    }
+
+    form {
+      background-color: #fff0f5;
+      padding: 60px 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      transition: all 0.3s ease-in-out;
+      justify-content: center;
+    }
+
+    form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input.form-control, select.form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    input.form-control:focus, select.form-control:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    }
+
+    .button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      background: #e9cbff;
+      color: black;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #e9cbff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+    }
+
+    .nav-icons {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      padding-right: 1px;
+    }
+
+    .nav-icons li a {
+      color: saddlebrown;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .nav-icons li a:hover {
+      color: #d28a8c;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+      padding: 10px 15px;
+      display: block;
+      border-radius: 30px;
+      transition: background 0.3s;
+      background-color: #fff0f5;
+    }
+
+    .nav-list a:hover {
+      background-color: #e9cbff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      margin-top: 10px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <ul class="nav-list" action="http://127.0.0.1:5000/about">
+    <li class="logo">🌸Flowers🌸</li>
+    <li><a class="btn btn-primary btn-lg" href="{{ url_for('home')}}" role="button">Home</a></li>
+    <li><a class="btn btn-primary btn-lg" href="{{ url_for('about_us')}}" role="button">About Us</a></li>
+    <li><a class="btn btn-primary btn-lg" href="{{ url_for('order_here')}}" role="button">Order Here</a></li>
+    <li><a class="btn btn-primary btn-lg" href="{{ url_for('admin_no')}}" role="button">Admin</a></li>
+    <li><a class="btn btn-primary btn-lg" href="{{ url_for('add_student')}}" role="button">Check Flower List</a></li>
+  </ul>
+  <ul class="nav-icons">
+    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+    <li><a href="#"><i class="fas fa-user"></i></a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <form action="http://127.0.0.1:5000/submit_order" method="POST">
+    <p>ORDER HERE!</p>
+
+    <div class="form-group">
+      <label for="flower">Name</label>
+      <input name="flower" class="form-control" id="flower">
+    </div>
+
+    <div class="form-group">
+      <label for="color">Types of Flower</label>
+      <input name="color" class="form-control" id="color">
+    </div>
+
+    <div class="form-group">
+      <label for="arrangement">Quantity</label>
+      <input name="arrangement" class="form-control" id="arrangement">
+    </div>
+
+    <div class="form-group">
+      <label for="location">Delivery Location</label>
+      <input name="location" class="form-control" id="location" required>
+    </div>
+
+    <div class="form-group">
+      <label for="delivery_method">Delivery Method</label>
+      <select name="delivery_method" class="form-control" id="delivery_method" required>
+        <option value="" disabled selected>Select Method</option>
+        <option value="standard">Standard Delivery</option>
+        <option value="express">Express Delivery</option>
+        <option value="same_day">Same-Day Delivery</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Payment Method</label>
+      <div class="radio-group">
+        <label><input type="radio" name="payment_method" value="card" required> Card</label>
+        <label><input type="radio" name="payment_method" value="upi"> UPI</label>
+        <label><input type="radio" name="payment_method" value="cod"> Cash on Delivery</label>
+      </div>
+    </div>
+
+    <div class="button">
+      <button type="submit" class="btn btn-primary">Place Order</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

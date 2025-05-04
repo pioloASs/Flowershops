@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+
+body {
+  background-color: #e9cbff !important;
+  font-family: 'Single Day', cursive;
+  background-size: cover;
+  color: saddlebrown;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#Flowers {
+  padding: 60px 20px;
+      background-color: #F39BD3;
+  text-align: center;
+  padding: 15rem;
+
+}
+
+.heading {
+  font-size: 3.5rem;
+  color: saddlebrown;
+  margin-bottom: 2rem;
+  font-family: 'Single Day', cursive;
+}
+
+.box-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 150px;
+  justify-content: center;
+  display: inline-block;
+  margin: 2%;
+
+}
+
+.box {
+  background-color: #fff0f5;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #d28a8c;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.icons a {
+  color: saddlebrown;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.content h3 {
+  font-size: 1.2rem;
+  color: saddlebrown;
+}
+
+.price {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 5px;
+}
+
+input.form-control {
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+
+
+
+.button :hover {
+  background-color: saddlebrown;
+  color: pink;
+}
+ .button {
+    text-align: center;
+  color: saddlebrown;
+  margin: 10px;
+ text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+
+    }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+}
+
+.nav-icons {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding-right: 1px;
+
+}
+
+.nav-icons li a {
+  color: saddlebrown;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.nav-icons li a:hover {
+  color: #d28a8c;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 30px;
+  transition: background 0.3s;
+  background-color:  #D28A8C;
+}
+
+.nav-list a:hover {
+  background-color: saddlebrown;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+      .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+
+}
+
+      .box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+    .box {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.choices {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.box.expanded .choices {
+  max-height: 300px; /* enough for 3-4 rows of flower options */
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.flower-variants {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+
+}
+
+.flower-variants img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.flower-variants img:hover {
+  transform: scale(1.1);
+  border-color: #007bff;
+}
+
+
+    .flower-variants {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .variant {
+      text-align: center;
+      width: 60px;
+    }
+
+    .variant img {
+      width: 100%;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #ddd;
+      transition: transform 0.2s ease, border 0.2s ease;
+    }
+
+    .variant img:hover {
+      transform: scale(1.1);
+      border-color: #007bff;
+    }
+
+    .variant-label {
+      font-size: 12px;
+      color: #555;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<table class="table"><!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<nav class="navbar">
+        <ul class="nav-list" action="http://127.0.0.1:5000/about">
+            <li class="logo">🌸Flowers🌸</li>
+           <li><a class="btn btn-primary btn-lg" href="{{ url_for('home')}}" role="button">Home</a></li>
+            <li><a class="btn btn-primary btn-lg" href="{{ url_for('about_us')}}" role="button" >About Us</a></li>
+ <li><a class="btn btn-primary btn-lg" href="{{ url_for('order_here')}}" role="button" >Order Here</a></li>
+              <li><a class="btn btn-primary btn-lg" href="{{ url_for('admin_no')}}" role="button" >Admin</a></li>
+
+        </ul>
+        <ul class="nav-icons">
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="#"><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
+</table>
+
+<script>
+function toggleChoices(box) {
+  const allBoxes = document.querySelectorAll('.box');
+  allBoxes.forEach(b => {
+    if (b !== box) {
+      b.classList.remove('expanded');
+    }
+  });
+  box.classList.toggle('expanded');
+}
+</script>
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='tulpis.jpg') }}" alt="Tulips">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Tulips</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+        <div class="variant">
+        <img src="{{ url_for('static', filename='red_tulip.jpg') }}" alt="Red Tulip">
+          <div class="variant-label">Red Tulip</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='pink_tulip.jpg') }}" alt="Pink Tulip">
+          <div class="variant-label">Pink Tulip</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='white_tulip.jpg') }}" alt="White Tulip">
+            <div class="variant-label">White Tulip</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='yellow_tulip.jpg') }}" alt="Yellow Tulip">
+           <div class="variant-label">Yellow Tulip</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='daisy.jpg') }}" alt="Daisy">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Daisy</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+        <div class="variant">
+        <img src="{{ url_for('static', filename='red-daisy.jpg') }}" alt="Red Daisy">
+          <div class="variant-label">Red Daisy</div>
+        </div>
+          <div class="variant">
+        <img src="{{ url_for('static', filename='pink-daisy.jpg') }}" alt="Pink Daisy">
+            <div class="variant-label">Pink Daisy</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='white-daisy.jpg') }}" alt="White Daisy">
+           <div class="variant-label">White Daisy</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='yellow-daisy.jpg') }}" alt="Yellow Daisy">
+           <div class="variant-label">Yellow Daisy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='orchid.jpg') }}" alt="Orchid">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Orchid</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+        <div class="variant">
+        <img src="{{ url_for('static', filename='red-orchid.jpg') }}" alt="Red Orchid">
+          <div class="variant-label">Red Orchid</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='pink-orchid.jpg') }}" alt="Pink Orchid">
+           <div class="variant-label">Pink Orchid</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='white-orchid.jpg') }}" alt="White Orchid">
+          <div class="variant-label">White Orchid</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='yellow-orchid.jpg') }}" alt="Yellow Orchid">
+            <div class="variant-label">Yellow Orchid</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='aster.jpg') }}" alt="Aster">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Aster</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+         <div class="variant">
+        <img src="{{ url_for('static', filename='red-aster.jpg') }}" alt="Red Aster">
+                 <div class="variant-label">Red Aster</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='pink-aster.jpg') }}" alt="Pink Aster">
+            <div class="variant-label">Pink Aster</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='white-aster.jpg') }}" alt="White Aster">
+           <div class="variant-label">White Aster</div>
+        </div>
+          <div class="variant">
+        <img src="{{ url_for('static', filename='yellow-aster.jpg') }}" alt="Yellow Aster">
+             <div class="variant-label">Yellow Aster</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='carnation.jpg') }}" alt="Carnation">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Carnation</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+         <div class="variant">
+        <img src="{{ url_for('static', filename='red-carnation.jpg') }}" alt="Red Carnation">
+            <div class="variant-label">Red Carnation</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='pink-carnation.jpg') }}" alt="Pink Carnation">
+           <div class="variant-label">Pink Carnation</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='white-carnation.jpg') }}" alt="White Carnation">
+            <div class="variant-label">White Carnation</div>
+        </div>
+            <div class="variant">
+        <img src="{{ url_for('static', filename='yellow-carnation.jpg') }}" alt="Yellow Carnation">
+                <div class="variant-label">Yellow Carnation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='daffodi.jpg') }}" alt="Daffodi">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Daffodi</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+        <div class="variant">
+        <img src="{{ url_for('static', filename='red-daffodi.jpg') }}" alt="Red Daffodi">
+          <div class="variant-label">Red Daffodi</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='pnk-daffodi.jpg') }}" alt="Pink Daffodi">
+            <div class="variant-label">Pink Daffodi</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='white-daffodi.jpg') }}" alt="White Daffodi">
+          <div class="variant-label">White Daffodi</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='yellow-daffodi.jpg') }}" alt="Yellow Daffodi">
+            <div class="variant-label">Yellow Daffodi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='hibiscus.jpg') }}" alt="Hibiscus">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Hibiscus</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+         <div class="variant">
+        <img src="{{ url_for('static', filename='red-hibiscus.jpg') }}" alt="Red Hibiscus">
+           <div class="variant-label">Red Hibiscus</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='pink-hibiscus.jpg') }}" alt="Pink Hibiscus">
+          <div class="variant-label">Pink Hibiscus</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='white-hibiscus.jpg') }}" alt="White Hibiscus">
+           <div class="variant-label">White Hibiscus</div>
+        </div>
+           <div class="variant">
+        <img src="{{ url_for('static', filename='yellow-hibisucs.jpg') }}" alt="Yellow Hibiscus">
+               <div class="variant-label">Yellow Hibiscus</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='lily.jpg') }}" alt="Lily">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>lily</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+         <div class="variant">
+        <img src="{{ url_for('static', filename='red-lily.jpg') }}" alt="Red Lily">
+            <div class="variant-label">Red Lily</div>
+        </div>
+         <div class="variant">
+        <img src="{{ url_for('static', filename='pink-lily.jpg') }}" alt="Pink Lily">
+           <div class="variant-label">Pink Lily</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='white-lily.jpg') }}" alt="White Lily">
+            <div class="variant-label">White Lily</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='yellow-lily.jpg') }}" alt="Yellow Lily">
+          <div class="variant-label">Yellow Lily</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='minirose.jpg') }}" alt="Minirose">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Minirose</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+         <div class="variant">
+        <img src="{{ url_for('static', filename='red-minirose.jpg') }}" alt="Red Minirose">
+           <div class="variant-label">Red Minirose</div>
+        </div>
+            <div class="variant">
+        <img src="{{ url_for('static', filename='pink-minirose.jpg') }}" alt="Pink Minirose">
+               <div class="variant-label">Pink Minirose</div>
+        </div>
+           <div class="variant">
+        <img src="{{ url_for('static', filename='white-minirose.jpg') }}" alt="White Minirose">
+              <div class="variant-label">White Minirose</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='yellow-minirose.jpg') }}" alt="Yellow Minirose">
+           <div class="variant-label">Yellow Minirose</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="box-wrapper">
+<div class="box" onclick="toggleChoices(this)">
+  <span class="discount">10%</span>
+  <div class="image">
+    <img src="{{ url_for('static', filename='jasmine.jpg') }}" alt="Jasmine">
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-heart"></a>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Jasmine</h3>
+    <div class="price">₱200.00</div>
+    <div class="choices">
+      <h4>Available Options</h4>
+      <div class="flower-variants">
+        <div class="variant">
+        <img src="{{ url_for('static', filename='red-jasmine.jpg') }}" alt="Red Jasmine">
+          <div class="variant-label">Red Jasmine</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='pink-jasmine.jpg') }}" alt="Pink Jasmine">
+          <div class="variant-label">Pink Jasmine</div>
+        </div>
+        <div class="variant">
+        <img src="{{ url_for('static', filename='white-jasmine.jpg') }}" alt="White Jasmine">
+          <div class="variant-label">White Jasmine</div>
+        </div>
+          <div class="variant">
+        <img src="{{ url_for('static', filename='yelloe-jasmine.jpg') }}" alt="Yellow Jasmine">
+             <div class="variant-label">Yellow Jasmine</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>
